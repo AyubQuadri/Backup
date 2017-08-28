@@ -1,0 +1,40 @@
+1. Move data from local windows/mac to linux environment on cloudx cluster using winscp/filezilla
+
+HistoricalData
+StreamingData
+Conf
+Scripts
+Jars
+
+2. Move data from Local file system (Linux/CentOs on) to HDFS using Flume
+flume-ng agent --conf ./Conf/ -f Conf/flume-conf.properties -Dflume.root.logger=DEBUG,console -n uberAgent
+
+3. Login to PySpark shell using pyspark
+
+4. Create an RDD with the name uber_data for the Historical Data available in HDFS
+uber_data = sc.textFile('/home/ayubquadri893721/')
+
+5. Verify the first record from the above RDD
+
+6. Create a new RDD with the name uber_fea_data with each field separated by "," 
+   Use the transformation "map" and apply a lambda function split on ","
+
+7. Verify first record
+
+8. Verify first few records
+
+9. Verify the type of RDD
+
+10. Take a sample of 2% from the above data and write this sample as CSV file into Local file system or HDFS
+Take a sample of 2% from the above data into RDD sampleUberData
+sampleUberData = uber_fea_data.sample(False, .02, 12345)
+
+11. Write a function (toCSVLine) which parses above RDD as CSV data.
+def toCSVLine(data):
+    return ','.join(str(d) for d in data)
+
+12. Create a new RDD lines, by applying a map transformation and the function toCSVLine on each line.
+lines = sampleUberData.map(toCSVLine)
+
+13. Write the above RDD lines as text file
+lines.coalesce(1).saveAsTextFile('file:///home/rameshmelapu9416/uber/SampleData')

@@ -1,0 +1,8 @@
+"","rules","support","confidence","lift"
+"9","{Issues=unclear dose} => {LocationID=Location2}",0.106315311222172,0.606217616580311,2.42156982594059
+"21","{DrugID=DRUG2} => {LocationID=Location2}",0.238073602907769,0.763848396501458,3.05123470181435
+"37","{Issues=unclear dose,DrugID=DRUG2} => {LocationID=Location2}",0.0940481599273058,1,3.994555353902
+"39","{Issues=unclear dose,Gender=M} => {LocationID=Location2}",0.0858700590640618,0.625827814569536,2.49990384730953
+"61","{Issues=Medication history documenting error,DrugID=DRUG2} => {LocationID=Location2}",0.0699681962744207,0.832432432432432,3.32519742973463
+"64","{DrugID=DRUG2,Gender=M} => {LocationID=Location2}",0.17810086324398,0.75968992248062,3.03462344715035
+"75","{Issues=unclear dose,DrugID=DRUG2,Gender=M} => {LocationID=Location2}",0.0758746024534303,1,3.994555353902
